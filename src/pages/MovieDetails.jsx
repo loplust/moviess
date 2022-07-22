@@ -1,9 +1,11 @@
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { get } from '../utils/httpClient';
 import styles from './MovieDetails.module.css'
 import { Spinner } from '../components/Spinner';
 import { getMovieimg } from '../utils/getMovieImg';
+import { Link } from 'react-router-dom';
+import { MdOutlineArrowBack } from 'react-icons/md'
 
 export function MovieDetails() {
     const { movieId } = useParams();
@@ -23,8 +25,15 @@ if (isLoading) {
 return <Spinner />;
 }
 
-const imageUrl = getMovieimg(movie.poster_path, 500);
+const imageUrl = getMovieimg(movie.poster_path, 300);
 return (
+    <>
+
+    <div className={styles.back}>
+        <Link to='/'>
+         <h4 className={styles.arrow}><MdOutlineArrowBack size={30}/> Back</h4>
+        </Link>
+        </div>
      <div className={styles.detailsContainer}>
     <img className={`${styles.col} ${styles.movieImage}`}
      src={imageUrl}
@@ -41,6 +50,9 @@ return (
             <strong>Description:</strong> {movie.overview}
         </p>
     </div>
+    
     </div>
+    </>
+    
 );
 }

@@ -22,3 +22,20 @@
 .firstItem {
     margin-top: 0;
 }
+.back {
+    display: flex;
+    justify-content: center;
+}
+.arrow {
+    display: flex;
+    font-size: 20px;
+}
+.boton {
+    color: white;
+    background-color: transparent;
+    font-size: 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}

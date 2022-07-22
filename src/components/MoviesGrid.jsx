@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useQuery } from '../hooks/useQuery';
 import { get } from '../utils/httpClient';
 import { MovieCard } from './MovieCard';
 import styles from './MoviesGrid.module.css';
@@ -12,7 +11,8 @@ export function MoviesGrid({ search }) {
     const [isLoading, setIsLoading] = useState(true);
     const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
-   
+
+
     useEffect(() => {
         setIsLoading(true);
         const searchUrl = search 
@@ -28,8 +28,8 @@ export function MoviesGrid({ search }) {
     if (!isLoading && movies.length === 0) {
         return <Empty/>
     }
-
     return (
+        <>
         <InfiniteScroll 
         dataLength={movies.length} 
         hasMore={hasMore}
@@ -42,5 +42,7 @@ export function MoviesGrid({ search }) {
            ))}
         </ul>
         </InfiniteScroll>
+        </>
+        
     );
 }
