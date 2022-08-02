@@ -1,0 +1,25 @@
+.moviesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 230px);
+  gap: 40px;
+  padding: 40px;
+  justify-content: center;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.count {
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073,
+  0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  font-size: 2rem;
+}
+
+@media (max-width: 560px) {
+  .moviesGrid {
+      grid-template-columns: 100%;
+
+  }
+}

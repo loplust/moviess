@@ -6,6 +6,7 @@ import { Spinner } from '../components/Spinner';
 import { getMovieimg } from '../utils/getMovieImg';
 import { Link } from 'react-router-dom';
 import { MdOutlineArrowBack } from 'react-icons/md'
+import { ResultCard } from '../components/ResultCard';
 
 export function MovieDetails() {
     const { movieId } = useParams();
@@ -50,7 +51,7 @@ return (
             <strong>Description:</strong> {movie.overview}
         </p>
     </div>
-    
+    <ResultCard movie={movie}/>
     </div>
     </>
     
